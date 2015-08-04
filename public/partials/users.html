@@ -8,7 +8,9 @@
             <th>Ismi</th>
             <th>Familiyasi</th>
             <th>Yashash manzili</th>
-            <th>To'plagan bali</th>
+            <th>Amaliyot bali</th>
+            <th>Test bali</th>
+            <th>Umumiy bali</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +28,13 @@
                 {{ user.address || 'empty' }}
             </td>
             <td>
-                {{ user.score }}
+                {{ user.currentScore || 'empty' }}
+            </td>
+            <td>
+                {{ user.testScore || '0' }}
+            </td>
+            <td>
+                {{ user.totalScore || '0' }}
             </td>
         </tr>
         </tbody>

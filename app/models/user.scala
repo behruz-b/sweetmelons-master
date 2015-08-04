@@ -35,7 +35,9 @@ case class Account(id: Option[Int],
                 email: String,
                 password: String,
                 role: Option[UserRoleEnum.UserRole],
-                score: Option[Double])
+                currentScore: Option[Int],
+                testScore: Option[Int],
+                totalScore: Option[Int])
 
 class UsersTable(tag: Tag) extends Table[Account](tag, "ACCOUNT") {
 
@@ -53,11 +55,15 @@ class UsersTable(tag: Tag) extends Table[Account](tag, "ACCOUNT") {
 
   def role = column[UserRoleEnum.UserRole]("ROLE", O.Default(UserRoleEnum.USER))
 
-  def score = column[Double]("SCORE", O.Default(0.0))
+  def currentScore = column[Int]("CURRENT_SCORE", O.Default(0))
 
-  def * = (id.?, firstName, lastName, address, email, password, role.?, score.?) <>(Account.tupled, Account.unapply _)
+  def testScore = column[Int]("TEST_SCORE", O.Default(0))
+
+  def totalScore = column[Int]("TOTAL_SCORE", O.Default(0))
+
+  def * = (id.?, firstName, lastName, address, email, password, role.?, currentScore.?, testScore.?, totalScore.?) <>(Account.tupled, Account.unapply _)
 
   val sorting = Map(
     "id" -> id, "firstName" -> firstName, "lastName" -> lastName,
-    "email" -> email, "password" -> password, "role" -> role, "score" -> score)
+    "email" -> email, "password" -> password, "role" -> role, "currentScore" -> currentScore, "testScore" -> testScore, "totalScore" -> totalScore)
 }
