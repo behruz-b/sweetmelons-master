@@ -17,10 +17,6 @@ class Users extends Controller with TestingAuth  with LazyLogging {
 
   val users = TableQuery[UsersTable]
 
-  def showAddForm = DBAction { implicit rs =>
-    Ok(views.html.addMembers())
-  }
-
   def usersList = DBAction { implicit rs =>
     Logger.info(s"Users = ${users.list}")
     Ok(toJson(users.list))

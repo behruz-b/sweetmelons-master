@@ -9,7 +9,7 @@ POST        /users/signIn             controllers.Application.signIn
 POST        /users/signOut            controllers.Application.signOut
 POST        /users/signup             @controllers.Users.signUp
 
-GET         /users/list               @controllers.Users.usersList
+GET         /users                    @controllers.Users.usersList
 
 POST        /questions/add            @controllers.Questions.addQuestion
 GET         /questions/list           @controllers.Questions.questionsList

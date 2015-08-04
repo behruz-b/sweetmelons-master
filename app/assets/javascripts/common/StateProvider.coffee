@@ -22,7 +22,7 @@ angular.module('myApp')
     url: "/home"
     views:
       "main@":
-        templateUrl: "assets/partials/main.tpl.html"
+        templateUrl: "/assets/partials/main.tpl.html"
     data:
       pageTitle: 'Home'
   )
@@ -33,7 +33,7 @@ angular.module('myApp')
       'main@':
         controller: "UserCtrl"
         controllerAs: "vm"
-        templateUrl: "assets/partials/users.html"
+        templateUrl: "/assets/partials/users.html"
     data:
       pageTitle: 'Users'
   )
@@ -44,9 +44,20 @@ angular.module('myApp')
       'main@':
         controller: "SignUpCtrl"
         controllerAs: "vm"
-        templateUrl: "assets/partials/signup.html"
+        templateUrl: "/assets/partials/signup.html"
     data:
       pageTitle: 'Users'
+  )
+
+  $stateProvider.state("root.questadd",
+    url: "/questadd"
+    views:
+      'main@':
+        controller: "AddQuestionCtrl"
+        controllerAs: "vm"
+        templateUrl: "/assets/partials/add-question.html"
+    data:
+      pageTitle: 'Adminstration Page'
   )
 
   $stateProvider.state("root.questions",
@@ -55,24 +66,9 @@ angular.module('myApp')
       'main@':
         controller: "QuestionsCtrl"
         controllerAs: "vm"
-        templateUrl: "assets/partials/questions.html"
+        templateUrl: "/assets/partials/questions.html"
       'header@':
-        templateUrl: 'assets/partials/header.tpl.html'
-        controller: 'HeaderCtrl'
-        controllerAs: 'vm'
-    data:
-      pageTitle: 'Adminstration Page'
-  )
-
-  $stateProvider.state("root.questadd",
-      url: "/questions/add"
-    views:
-      'main@':
-        controller: "AddQuestionCtrl"
-        controllerAs: "vm"
-        templateUrl: "assets/partials/add-question.html"
-      'header@':
-        templateUrl: 'assets/partials/header.tpl.html'
+        templateUrl: '/assets/partials/header.tpl.html'
         controller: 'HeaderCtrl'
         controllerAs: 'vm'
     data:
@@ -85,9 +81,9 @@ angular.module('myApp')
       'main@':
         controller: "QuestionEditCtrl"
         controllerAs: "vm"
-        templateUrl: "assets/partials/question.html"
+        templateUrl: "/assets/partials/question.html"
       'header@':
-        templateUrl: 'assets/partials/header.tpl.html'
+        templateUrl: '/assets/partials/header.tpl.html'
         controller: 'HeaderCtrl'
         controllerAs: 'vm'
     data:
