@@ -5,8 +5,8 @@
 # Home page
 GET         /                         controllers.Application.index
 
-POST        /users/signIn             controllers.Application.signIn
-POST        /users/signOut            controllers.Application.signOut
+POST        /signIn             controllers.Application.signIn
+POST        /signOut            controllers.Application.signOut
 POST        /users/signup             @controllers.Users.signUp
 
 GET         /users                    @controllers.Users.usersList

@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-7 col-sm-offset-3 col-md-5 col-md-offset-4 col-lg-4 col-lg-offset-4 text-center">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Testni boshlash uchun <br/>login va parolni kiriting</h2>
+            </div>
+            <div class="panel-body">
+                <form id="SignInForm" ng-controller="SignInCtrl as vm" name="SignInForm"
+                      class="form-horizontal" role="form" ng-submit="vm.signIn(credential)">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label for="login" class="form-control-static"><b>Login:</b></label>
+                        </div>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" placeholder="user123"
+                                   id="login" ng-model="credential.login"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label for="password" class="form-control-static"><b>Parol:</b></label>
+                        </div>
+                        <div class="col-xs-10">
+                            <input type="password" placeholder="*******" class="form-control"
+                                   id="password" ng-model="credential.password"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <button type="submit" class="btn btn-success form-control">Kirish</button>
+                </form>
+            </div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+</div>

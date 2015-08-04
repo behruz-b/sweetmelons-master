@@ -45,6 +45,18 @@ angular.module('myApp')
     data:
       pageTitle: 'Users'
   )
+  $stateProvider.state("root.signin",
+    url: "/signin"
+    views:
+      'main@':
+        controller: "SignInCtrl"
+        controllerAs: "vm"
+        templateUrl: "/assets/partials/signin.html"
+      'header@':
+        templateUrl: 'assets/partials/header-login.tpl.html'
+    data:
+      pageTitle: 'Users'
+  )
   $stateProvider.state("root.questions",
     url: "/questions/list"
     views:
