@@ -1,9 +1,13 @@
-angular.module('myApp')
-.controller 'HeaderCtrl', class
-  constructor: ($log, $scope, $state) ->
-    vm = @
+angular.module('myApp.controllers')
+.controller 'QuestionsCtrl', class
+    constructor: ($scope, @$log, Questions) ->
+        $scope.questions = []
 
-#    vm.logout = ->
-#      HeaderSvc.logout()
-#      .then () ->
-#        $state.go('root.home')
+        $scope.getQuestions = () =>
+            Questions.query((data) =>
+                if data
+                    $scope.questions = data
+                    @$log.info($scope.questions)
+            ).$promise
+
+        $scope.getQuestions()

@@ -17,7 +17,6 @@ angular.module('myApp')
       footer:
         templateUrl: "/assets/partials/footer.tpl.html"
   )
-
   $stateProvider.state("root.home",
     url: "/home"
     views:
@@ -26,7 +25,6 @@ angular.module('myApp')
     data:
       pageTitle: 'Home'
   )
-
   $stateProvider.state("root.users",
     url: "/users/list"
     views:
@@ -37,7 +35,6 @@ angular.module('myApp')
     data:
       pageTitle: 'Users'
   )
-
   $stateProvider.state("root.signup",
     url: "/signup"
     views:
@@ -48,7 +45,16 @@ angular.module('myApp')
     data:
       pageTitle: 'Users'
   )
-
+  $stateProvider.state("root.questions",
+    url: "/questions/list"
+    views:
+      'main@':
+        controller: "QuestionsCtrl"
+        controllerAs: "vm"
+        templateUrl: "assets/partials/questions.html"
+    data:
+      pageTitle: 'Adminstration Page'
+  )
   $stateProvider.state("root.questadd",
     url: "/questadd"
     views:
@@ -59,33 +65,13 @@ angular.module('myApp')
     data:
       pageTitle: 'Adminstration Page'
   )
-
-  $stateProvider.state("root.questions",
-      url: "/questions/list"
-    views:
-      'main@':
-        controller: "QuestionsCtrl"
-        controllerAs: "vm"
-        templateUrl: "/assets/partials/questions.html"
-      'header@':
-        templateUrl: '/assets/partials/header.tpl.html'
-        controller: 'HeaderCtrl'
-        controllerAs: 'vm'
-    data:
-      pageTitle: 'Adminstration Page'
-  )
-
   $stateProvider.state("root.questedit",
     url: "/questions/edit"
     views:
       'main@':
         controller: "QuestionEditCtrl"
         controllerAs: "vm"
-        templateUrl: "/assets/partials/question.html"
-      'header@':
-        templateUrl: '/assets/partials/header.tpl.html'
-        controller: 'HeaderCtrl'
-        controllerAs: 'vm'
+        templateUrl: "assets/partials/question.html"
     data:
       pageTitle: 'Adminstration Page'
   )

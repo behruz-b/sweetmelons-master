@@ -1,0 +1,26 @@
+<div class="container" ng-controller="QuestionsCtrl as qsc">
+    <h1 class="text-center">Savollar Ro'yhati</h1>
+    <table class="table table-responsive">
+        <thead>
+        <tr class="row">
+            <th class="col-md-1">№</th>
+            <th class="col-md-7">Savol</th>
+            <th class="col-md-4">O'chirish/O'zgartirish</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr class="row" ng-repeat="question in questions | filter:searchText">
+                <td class="col-md-1">{{$index + 1}}</td>
+                <td class="col-md-7">{{question.question}}</td>
+                <td class="col-md-4">
+                    <a href="">
+                        <button class="btn btn-danger btn-xs">O'chirish</button>
+                    </a>
+                    <a href="">
+                        <button class="btn btn-warning btn-xs">O'zgartirish</button>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -75,15 +75,15 @@ class QuestionsTable(tag: Tag) extends Table[Question](tag, "Questions") {
 
   def question = column[String]("question", O.Default(""))
 
-  def aAns = column[String]("aVariant", O.Default(""))
+  def aAns = column[String]("aAns", O.Default(""))
 
-  def bAns = column[String]("bVariant", O.Default(""))
+  def bAns = column[String]("bAns", O.Default(""))
 
-  def cAns = column[String]("cVariant", O.Default(""))
+  def cAns = column[String]("cAns", O.Default(""))
 
-  def dAns = column[String]("dVariant", O.Default(""))
+  def dAns = column[String]("dAns", O.Default(""))
 
-  def rAns = column[String]("dVariant", O.Default(""))
+  def rAns = column[String]("rAns", O.Default(""))
 
   def * = (id.?, question, aAns, bAns, cAns, dAns, rAns) <>(Question.tupled,Question.unapply _)
 

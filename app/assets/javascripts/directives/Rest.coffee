@@ -28,7 +28,7 @@ angular.module('myApp')
   ])
 
 .factory('Questions', ['$resource', ($resource) ->
-    $resource('/questions/:id', id: '@id',
+    $resource('/questions/list/:id', id: '@id',
       {
         'update':'method': 'PUT',
         'query': {method: 'GET', url: '/questions/list', isArray: true}

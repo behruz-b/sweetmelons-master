@@ -7,7 +7,7 @@ angular.module('myApp.controllers')
         vm.signUp = (user) =>
             Users.signUp(user, (data) =>
                 if data
-                    $state.go('root.questions')
+                    $state.go('root.users')
             ).$promise
 
 #        $scope.signUp = () ->

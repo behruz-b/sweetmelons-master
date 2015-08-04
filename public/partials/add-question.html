@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <h3><b> Savol: </b></h3>
                         <input type="text" class="form-control"
-                               name="question" required="" ng-model="question.quest" />
+                               name="question" required="" ng-model="question.question" />
                     </div>
 
                     <h3 class="text-center"><b>Javob <i>A</i> :</b></h3>
@@ -42,6 +42,17 @@
                         <div class="col-md-9">
                             <input type="text" class="form-control"
                                    name="dVariant" required="" ng-model="question.dAns" />
+                        </div>
+                    </div>
+                    <h3 class="text-center"><b>To'g'ri javob :</b></h3>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <select name="javob" class="col-md-3 form-control" ng-model="question.rAns">
+                                <option value="a">A</option>
+                                <option value="b">B</option>
+                                <option value="c">C</option>
+                                <option value="d">D</option>
+                            </select>
                         </div>
                     </div>
                     <br/>
