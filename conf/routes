@@ -7,7 +7,7 @@ GET         /                         controllers.Application.index
 
 POST        /users/signIn             controllers.Application.signIn
 POST        /users/signOut            controllers.Application.signOut
-POST        /users/signUp             @controllers.Users.signUp
+POST        /users/signup             @controllers.Users.signUp
 
 GET         /users                    @controllers.Users.findUsers
 

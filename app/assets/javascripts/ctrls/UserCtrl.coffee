@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 .controller 'UserCtrl', class
-    constructor: ($scope, @$log, $route, Users) ->
+    constructor: ($scope, @$log, Users) ->
         glob = $scope.Glob
         $scope.users = []
 

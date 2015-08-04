@@ -31,14 +31,25 @@ angular.module('myApp')
     url: "/users"
     views:
       'main@':
-        controller: "UsersCtrl"
+        controller: "UserCtrl"
         controllerAs: "vm"
         templateUrl: "assets/partials/users.html"
     data:
       pageTitle: 'Users'
   )
 
-  $stateProvider.state("root.quetions",
+  $stateProvider.state("root.signup",
+    url: "/signup"
+    views:
+      'main@':
+        controller: "SignUpCtrl"
+        controllerAs: "vm"
+        templateUrl: "assets/partials/signup.html"
+    data:
+      pageTitle: 'Users'
+  )
+
+  $stateProvider.state("root.questions",
       url: "/questions/add"
     views:
       'main@':

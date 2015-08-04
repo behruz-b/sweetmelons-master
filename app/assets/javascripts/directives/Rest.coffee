@@ -7,7 +7,7 @@ angular.module('myApp')
                 'roles': {method: 'GET', url: '/users/roles', isArray: true},
                 'states': {method: 'GET', url: '/users/states', isArray: true},
                 'signIn': {method: 'POST', url: '/signIn'}
-                'signUp': {method: 'POST', url: '/signUp'}
+                'signUp': {method: 'POST', url: '/users/signup'}
             }
     )
 ])
@@ -28,7 +28,7 @@ angular.module('myApp')
   ])
 
 .factory('Questions', ['$resource', ($resource) ->
-    $resource('/hotels/:id', id: '@id',
+    $resource('/questions/:id', id: '@id',
       {
         'update':'method': 'PUT',
         'query': {method: 'GET', url: '/questions/list', isArray: true}

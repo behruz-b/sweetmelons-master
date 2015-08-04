@@ -34,8 +34,8 @@ case class Account(id: Option[Int],
                 address: String,
                 email: String,
                 password: String,
-                role: UserRoleEnum.UserRole,
-                score: Double)
+                role: Option[UserRoleEnum.UserRole],
+                score: Option[Double])
 
 class UsersTable(tag: Tag) extends Table[Account](tag, "ACCOUNT") {
 
@@ -51,11 +51,11 @@ class UsersTable(tag: Tag) extends Table[Account](tag, "ACCOUNT") {
 
   def password = column[String]("PASSWORD", O.NotNull)
 
-  def role = column[UserRoleEnum.UserRole]("ROLE", O.NotNull)
+  def role = column[UserRoleEnum.UserRole]("ROLE", O.Default(UserRoleEnum.USER))
 
   def score = column[Double]("SCORE", O.Default(0.0))
 
-  def * = (id.?, firstName, lastName, address, email, password, role, score) <>(Account.tupled, Account.unapply _)
+  def * = (id.?, firstName, lastName, address, email, password, role.?, score.?) <>(Account.tupled, Account.unapply _)
 
   val sorting = Map(
     "id" -> id, "firstName" -> firstName, "lastName" -> lastName,

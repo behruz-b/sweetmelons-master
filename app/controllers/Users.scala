@@ -26,7 +26,7 @@ class Users extends Controller with TestingAuth {
 
   def signUp = DBAction(parse.json) { implicit rs =>
     rs.request.body.validate[Account].map { user =>
-      val userId = (users returning users.map(_.id)) += user
+      val userId = (users returning users.map(_.id)) += Account(None, user.firstName, user.lastName, user.address, user.email, user.password, Some(UserRoleEnum.USER), Some(0.0))
       val addedUser = users.findBy(_.id).applied(userId.toInt).first
       Ok(toJson(addedUser))
     }.recoverTotal { errors =>
