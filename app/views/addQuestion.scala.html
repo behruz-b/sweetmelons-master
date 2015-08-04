@@ -1,0 +1,80 @@
+@main("Savol qo'shish") {
+    @navbarAdmin("addQuestions")
+    <div class="container main-content">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="text-center"><strong>Test savollarni qo'shish</strong></h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <form class="@routes.Questions.addQuestions()" method="post">
+                        <div class="form-group">
+                            <h3><b> Savol: </b></h3>
+                            <textarea type="textarea" class="form-control"
+                            name="question" required="">
+                            </textarea>
+                        </div>
+
+                        <h3 class="text-center"><b>Javob <i>A</i> :</b></h3>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <textarea type="textarea" class="form-control"
+                                name="aVariant" required="">
+                                </textarea>
+                            </div>
+                            <select name="javob" class="col-md-3 form-control">
+                                <option value="2">Noto'g'ri</option>
+                                <option value="1">To'g'ri</option>
+                            </select>
+                        </div>
+
+                        <h3 class="text-center"><b>Javob <i>B</i> :</b></h3>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <textarea type="textarea" class="form-control"
+                                name="bVariant" required="">
+                                </textarea>
+                            </div>
+                            <select name="javob" class="col-md-3 form-control">
+                                <option value="2">Noto'g'ri</option>
+                                <option value="1">To'g'ri</option>
+                            </select>
+                        </div>
+
+                        <h3 class="text-center"><b>Javob <i>C</i> :</b></h3>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <textarea type="textarea" class="form-control"
+                                name="cVariant" required="">
+                                </textarea>
+                            </div>
+                            <select name="javob" class="col-md-3 form-control">
+                                <option value="2">Noto'g'ri</option>
+                                <option value="1">To'g'ri</option>
+                            </select>
+                        </div>
+
+                        <h3 class="text-center"><b>Javob <i>D</i> :</b></h3>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <textarea type="textarea" class="form-control"
+                                name="dVariant" required="">
+                                </textarea>
+                            </div>
+                            <select name="javob" class="col-md-3 form-control">
+                                <option value="2">Noto'g'ri</option>
+                                <option value="1">To'g'ri</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Saqlash</button>
+                        </div>
+                    </form>
+                </div>
+                <br>
+            </div>
+            <br/>
+        </div>
+    </div>
+}

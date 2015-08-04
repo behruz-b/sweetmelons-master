@@ -1,0 +1,36 @@
+@(questions: List[QuestionData])
+@main("Savollar ro'yhati") {
+    @navbar("questionList")
+
+    <div class="container">
+        <h1 class="text-center">Savollar Ro'yhati</h1>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Savollar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for(i <- questions) {
+                        <tr>
+                            <td>@i.id</td>
+                            <td>@i.question</td>
+                            @*<td>
+                                <a href="@routes.Students.remove(i.id.get)">
+                                    <button class="btn btn-danger">Delete</button>
+                                </a>
+                                <a href="@routes.Students.editFormStudentsList(i.id.get)">
+                                    <button class="btn btn-warning">Edit</button>
+                                </a>
+                            </td>*@
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

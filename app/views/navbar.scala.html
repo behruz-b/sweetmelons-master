@@ -1,0 +1,26 @@
+@(activePage: String)
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@routes.Application.index()">Brend</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                        <li class="@if(activePage == "addMembers") {active} "><a href="">Ishtiroqchilarni <br/> ro'yhatga olish</a></li>
+                        <li class="@if(activePage == "members") {active} "><a href="">Ishtirokchilar</a></li>
+                        <li class="@if(activePage == "questionList") {active} "><a href="">Savollar ro'yhati</a></li>
+                        <li class="@if(activePage == "startTest") {active} "><a href="">Testni boshlash</a></li>
+            </ul>
+            <div class="navbar navbar-right">
+                <a href=""><button class="btn btn-primary margin-top">Kirish</button></a>
+            </div>
+        </div>
+        </div>
+</nav>

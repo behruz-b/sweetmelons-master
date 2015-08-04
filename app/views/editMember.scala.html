@@ -1,0 +1,62 @@
+@(member: Users)
+
+@main("ishtirokchini o'zgartirish") {
+
+  @navbar("addMember")
+
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+            <h1><strong>Ro'yhatdan o'tish</strong></h1>
+            <div class="row">
+              <div class="col-lg-12">
+                <form class="" method="post">
+                  <div class="form-group">
+                    <label for="inp-name" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-name"
+                    name="name" required="" placeholder="Ismi" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp-surname" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-surname"
+                    name="surname" required="" placeholder="Familiyasi" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp-otasining_ismi" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-otasining_ismi"
+                    placeholder="Otasining ismi" required="" name="secondname" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp-tugulgan_sana" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-tugulgan_sana"
+                    placeholder="Tug'ulgan sanasi" required="" name="adress" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp-guruhi" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-guruhi"
+                    name="login" required="" placeholder="Gurugi misol:911-12" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp-elektron_pochtasi" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-elektron_pochtasi"
+                    name="pass" required="" placeholder="Elektron pochtasi" value="">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inp-tel" class="color-black"></label>
+                    <input type="text" class="form-control" id="inp-tel"
+                     required="" name="confPass" value="">
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary center-block text-center btn-block">
+                    Saqlash</button>
+                </form>
+              </div>
+            </div>
+            <br>
+      </div>
+    </div>
+  </div>
+
+
+}

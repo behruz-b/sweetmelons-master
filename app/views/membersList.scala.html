@@ -1,0 +1,34 @@
+@(members: List[Users])
+
+@main("Bosh sahifa") {
+    @navbar("members")
+
+    <div class="container main-content">
+
+        <h1 class="text-center">Talabalar ro'yhati</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Ismi</th>
+                    <th>Familiyasi</th>
+                    <th>Otasining ismi</th>
+                    <th>Yashash manzili</th>
+                    <th>To'plagan bali</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(i <- members) {
+                <tr>
+                    @*<td>@i.name</td>*@
+                    @*<td>@i.surname</td>*@
+                    @*<td>@i.secondname</td>*@
+                    @*<td>@i.adress</td>*@
+                    @*<td>@i.login</td>*@
+
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+}
