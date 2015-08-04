@@ -1,0 +1,62 @@
+<div class="container main-content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="text-center"><strong>Test savollarni qo'shish</strong></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <form id="CreateQuestionForm" name="CreateQuestionForm"  ng-controller="AddQuestionCtrl as vm"
+                      class="form-horizontal" role="form" ng-submit="vm.addQuestion(question)">
+                    <div class="form-group">
+                        <h3><b> Savol: </b></h3>
+                        <input type="text" class="form-control"
+                               name="question" required="">
+                        </input>
+                    </div>
+
+                    <h3 class="text-center"><b>Javob <i>A</i> :</b></h3>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" class="form-control"
+                                   name="aVariant" required="" ng-model="question.aAns">
+                            </input>
+                        </div>
+                    </div>
+
+                    <h3 class="text-center"><b>Javob <i>B</i> :</b></h3>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" class="form-control"
+                                   name="bVariant" required="" ng-model="question.bAns">
+                            </input>
+                        </div>
+                    </div>
+
+                    <h3 class="text-center"><b>Javob <i>C</i> :</b></h3>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" class="form-control"
+                                   name="cVariant" required="" ng-model="question.cAns">
+                            </input>
+                        </div>
+                    </div>
+
+                    <h3 class="text-center"><b>Javob <i>D</i> :</b></h3>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" class="form-control"
+                                   name="dVariant" required="" ng-model="question.dAns">
+                            </input>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Saqlash</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+        </div>
+        <br/>
+    </div>
+</div>

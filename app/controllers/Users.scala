@@ -1,5 +1,6 @@
 package controllers
 
+import com.typesafe.scalalogging.slf4j.LazyLogging
 import models._
 import play.api.Logger
 import play.api.db.slick.Config.driver.simple._
@@ -9,18 +10,19 @@ import play.api.mvc._
 
 import scala.slick.lifted.TableQuery
 
-class Users extends Controller with TestingAuth {
+class Users extends Controller with TestingAuth  with LazyLogging {
 
   import models._
   import models.JsonFormats._
+
   val users = TableQuery[UsersTable]
 
   def showAddForm = DBAction { implicit rs =>
     Ok(views.html.addMembers())
   }
 
-  def findUsers = DBAction { implicit rs =>
-    Logger.info(s"Hiiiii im here =${users.list}")
+  def usersList = DBAction { implicit rs =>
+    Logger.info(s"Users = ${users.list}")
     Ok(toJson(users.list))
   }
 

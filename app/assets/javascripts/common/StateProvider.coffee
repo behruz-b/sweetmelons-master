@@ -28,7 +28,7 @@ angular.module('myApp')
   )
 
   $stateProvider.state("root.users",
-    url: "/users"
+    url: "/users/list"
     views:
       'main@':
         controller: "UserCtrl"
@@ -50,18 +50,31 @@ angular.module('myApp')
   )
 
   $stateProvider.state("root.questions",
-      url: "/questions/add"
+      url: "/questions/list"
     views:
       'main@':
         controller: "QuestionsCtrl"
         controllerAs: "vm"
-        templateUrl: "assets/partials/add-question.html"
+        templateUrl: "assets/partials/questions.html"
       'header@':
-        templateUrl: 'assets/partials/admin-header.tpl.html'
+        templateUrl: 'assets/partials/header.tpl.html'
         controller: 'HeaderCtrl'
         controllerAs: 'vm'
-      'footer@':
-        templateUrl: 'assets/partials/admin-footer.tpl.html'
+    data:
+      pageTitle: 'Adminstration Page'
+  )
+
+  $stateProvider.state("root.questadd",
+      url: "/questions/add"
+    views:
+      'main@':
+        controller: "AddQuestionCtrl"
+        controllerAs: "vm"
+        templateUrl: "assets/partials/add-question.html"
+      'header@':
+        templateUrl: 'assets/partials/header.tpl.html'
+        controller: 'HeaderCtrl'
+        controllerAs: 'vm'
     data:
       pageTitle: 'Adminstration Page'
   )
@@ -72,9 +85,9 @@ angular.module('myApp')
       'main@':
         controller: "QuestionEditCtrl"
         controllerAs: "vm"
-        templateUrl: "assets/partials/add-question.html"
+        templateUrl: "assets/partials/question.html"
       'header@':
-        templateUrl: 'assets/partials/admin-header.tpl.html'
+        templateUrl: 'assets/partials/header.tpl.html'
         controller: 'HeaderCtrl'
         controllerAs: 'vm'
     data:

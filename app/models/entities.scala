@@ -7,7 +7,7 @@ import play.api.libs.json._
 import java.util.Date
 
 /**
- * Created by bunyod on 1/19/15.
+ * Created by bunyod on 08/03/15.
  */
 
 trait BaseEnum extends Enumeration {
@@ -61,6 +61,34 @@ class AdminsTable(tag: Tag) extends Table[Admin](tag, "ADMIN") {
 
 }
 
+case class Question(id: Option[Int],
+                    question: String,
+                    aAns: String,
+                    bAns: String,
+                    cAns: String,
+                    dAns: String,
+                    rAns: String)
+
+class QuestionsTable(tag: Tag) extends Table[Question](tag, "Questions") {
+
+  def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
+
+  def question = column[String]("question", O.Default(""))
+
+  def aAns = column[String]("aVariant", O.Default(""))
+
+  def bAns = column[String]("bVariant", O.Default(""))
+
+  def cAns = column[String]("cVariant", O.Default(""))
+
+  def dAns = column[String]("dVariant", O.Default(""))
+
+  def rAns = column[String]("dVariant", O.Default(""))
+
+  def * = (id.?, question, aAns, bAns, cAns, dAns, rAns) <>(Question.tupled,Question.unapply _)
+
+}
+
 object JsonFormats {
 
   import play.api.libs.json.Json
@@ -75,4 +103,6 @@ object JsonFormats {
   implicit val permissionWrites = Json.writes[Permission]
 
   implicit val userFormat = Json.format[Account]
+
+  implicit val questionFormat = Json.format[Question]
 }

@@ -9,21 +9,10 @@ POST        /users/signIn             controllers.Application.signIn
 POST        /users/signOut            controllers.Application.signOut
 POST        /users/signup             @controllers.Users.signUp
 
-GET         /users                    @controllers.Users.findUsers
+GET         /users/list               @controllers.Users.usersList
 
-
-#GET         /addQuestions             controllers.Application.addQuestion
-#GET         /questionList             controllers.Application.questionList
-#GET         /passingTest              controllers.Application.passingTest
-#
-#GET         /verification             controllers.Application.verification
-#
-#GET         /verificationAdmin        controllers.Application.verificationAdmin
-#GET         /questionListAdmin        controllers.Application.questionListAdmin
-
-POST        /addQuestions             @controllers.Questions.addQuestions
-GET         /addQuestions             @controllers.Questions.showQuestionForm
-GET         /questionsList            @controllers.Questions.questionsList
+POST        /questions/add            @controllers.Questions.addQuestion
+GET         /questions/list           @controllers.Questions.questionsList
 
 
 # Map static resources from the /public folder to the /assets URL path

@@ -3,7 +3,7 @@ angular.module('myApp')
     $resource('/users/:id', id: '@id',
             {
                 'update':'method': 'PUT',
-                'query': {method: 'GET'}
+                'query': {method: 'GET', url: '/users/list', isArray: true}
                 'roles': {method: 'GET', url: '/users/roles', isArray: true},
                 'states': {method: 'GET', url: '/users/states', isArray: true},
                 'signIn': {method: 'POST', url: '/signIn'}
@@ -34,7 +34,7 @@ angular.module('myApp')
         'query': {method: 'GET', url: '/questions/list', isArray: true}
         'list': {method: 'GET', url: '/questions/list', isArray: true},
         'random': {method: 'GET', url: '/questions/random', isArray: true},
-        'add': {method: 'POST', url: 'questions/add'}
+        'add': {method: 'POST', url: '/questions/add'}
       }
     )
   ])
