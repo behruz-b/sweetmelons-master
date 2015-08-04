@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 .controller 'PassTestCtrl', class
-    constructor: ($scope, $log, $location, $state, $stateParams, Search) ->
+    constructor: ($scope, $log, $location, $state, $stateParams, PassTest) ->
         vm = @
         glob = $scope.Glob
         vm.hotels = {}

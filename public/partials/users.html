@@ -1,0 +1,34 @@
+<div class="container main-content" ng-controller="UserCtrl as uc">
+
+    <h1 class="text-center">Ishtrokchilar ro'yhati</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Ismi</th>
+            <th>Familiyasi</th>
+            <th>Yashash manzili</th>
+            <th>To'plagan bali</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users | filter:searchText">
+            <td>
+                {{$index + 1}}
+            </td>
+            <td>
+                {{ user.firstName || 'empty' }}
+            </td>
+            <td>
+                {{ user.lastName || 'empty' }}
+            </td>
+            <td>
+                {{ user.address || 'empty' }}
+            </td>
+            <td>
+                {{ user.score }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

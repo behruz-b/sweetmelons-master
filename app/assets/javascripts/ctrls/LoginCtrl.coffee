@@ -1,4 +1,5 @@
-class LoginCtrl
+angular.module('myApp')
+.controller 'LoginCtrl', class
 
     constructor: ($scope, Users) ->
         $scope.credential = {}
@@ -20,5 +21,3 @@ class LoginCtrl
             , (error) ->
                 alert("Incorrect login or password.")
             )
-
-controllersModule.controller('LoginCtrl', LoginCtrl)

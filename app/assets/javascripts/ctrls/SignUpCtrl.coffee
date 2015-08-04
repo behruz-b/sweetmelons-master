@@ -1,5 +1,5 @@
-class SignUpCtrl
-
+angular.module('myApp.controllers')
+.controller 'SignUpCtrl', class
     constructor: ($scope, Users) ->
         $scope.user = {}
 
@@ -27,5 +27,3 @@ class SignUpCtrl
             , (error) ->
                 alert("Incorrect fields.")
             )
-
-controllersModule.controller('SingUpCtrl', SignUpCtrl)
