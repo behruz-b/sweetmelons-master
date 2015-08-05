@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 .controller 'SignInCtrl', class
-    constructor: ($log, $scope, $state, Users) ->
+    constructor: ($scope, @$log, $state, Users) ->
         vm = @
 
         vm.signIn = (credential) =>
@@ -18,7 +18,11 @@ angular.module('myApp.controllers')
 
             Users.signIn(loginPass, (data) =>
                 if data
-                    $state.go('root.start')
+#                    questId = 0
+#                    @$log.info("questId")
+#                    @$log.info(questId)
+#                    @$log.info("questId1")
+                    $state.go('root.start', questId:0)
                 else
                     alert("Incorrect login or password.")
             ).$promise

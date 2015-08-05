@@ -21,7 +21,7 @@ angular.module('myApp')
     url: "/home"
     views:
       "main@":
-        templateUrl: "/assets/partials/main.tpl.html"
+        templateUrl: "assets/partials/main.tpl.html"
     data:
       pageTitle: 'Home'
   )
@@ -31,7 +31,7 @@ angular.module('myApp')
       'main@':
         controller: "UserCtrl"
         controllerAs: "vm"
-        templateUrl: "/assets/partials/users.html"
+        templateUrl: "assets/partials/users.html"
     data:
       pageTitle: 'Users'
   )
@@ -41,7 +41,7 @@ angular.module('myApp')
       'main@':
         controller: "SignUpCtrl"
         controllerAs: "vm"
-        templateUrl: "/assets/partials/signup.html"
+        templateUrl: "assets/partials/signup.html"
     data:
       pageTitle: 'Users'
   )
@@ -51,7 +51,7 @@ angular.module('myApp')
       'main@':
         controller: "SignInCtrl"
         controllerAs: "vm"
-        templateUrl: "/assets/partials/signin.html"
+        templateUrl: "assets/partials/signin.html"
       'header@':
         templateUrl: 'assets/partials/header-login.tpl.html'
     data:
@@ -73,7 +73,7 @@ angular.module('myApp')
       'main@':
         controller: "AddQuestionCtrl"
         controllerAs: "vm"
-        templateUrl: "/assets/partials/add-question.html"
+        templateUrl: "assets/partials/add-question.html"
     data:
       pageTitle: 'Adminstration Page'
   )
@@ -84,6 +84,16 @@ angular.module('myApp')
         controller: "QuestionEditCtrl"
         controllerAs: "vm"
         templateUrl: "assets/partials/question.html"
+    data:
+      pageTitle: 'Adminstration Page'
+  )
+  $stateProvider.state("root.start",
+    url: "/tests/:questId"
+    views:
+      'main@':
+        controller: "PassTestCtrl"
+        controllerAs: "vm"
+        templateUrl: "assets/partials/passing-test.html"
     data:
       pageTitle: 'Adminstration Page'
   )

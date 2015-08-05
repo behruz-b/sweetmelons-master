@@ -32,8 +32,9 @@ angular.module('myApp')
       {
         'update':'method': 'PUT',
         'query': {method: 'GET', url: '/questions/list', isArray: true}
-        'random': {method: 'GET', url: '/questions/random', isArray: true},
+        'tests': {method: 'GET', url: '/questions/list', isArray: true},
         'add': {method: 'POST', url: '/questions/add'}
+        'save': {method: 'POST', url: '/test/save'}
       }
     )
   ])

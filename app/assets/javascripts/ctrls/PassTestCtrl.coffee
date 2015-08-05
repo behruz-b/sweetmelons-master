@@ -1,28 +1,28 @@
 angular.module('myApp.controllers')
 .controller 'PassTestCtrl', class
-    constructor: ($scope, $log, $location, $state, $stateParams, PassTest) ->
-        vm = @
-        glob = $scope.Glob
-        vm.hotels = {}
-        $scope.cityId = 1
-        searchParams =
-            hotelTypeId: 1
-            starRating: 5
-        searchParams.cityId = $stateParams.cityId
-        searchParams.checkInDate = $stateParams.checkInDate
-        searchParams.checkOutDate = $stateParams.checkOutDate
+    constructor: ($scope, @$log, $state, $stateParams, Questions) ->
+        $scope.questions = {}
+        $scope.question = {}
+        $scope.index = (Number) $stateParams.questId
+        $scope.quest = {
+            rans:''
+        }
 
-        vm.findHotels = () =>
-            Search.findHotel(searchParams, (data) =>
+        vm = @
+
+        $scope.getQuestions = () =>
+            Questions.tests((data) =>
                 if data
-                    vm.hotels = data.rows
-                    $log.info(vm.hotels)
+                    $scope.questions = data
+                    $scope.question = $scope.questions[$scope.index]
             ).$promise
 
-        vm.showDetails = (hotelId) =>
-            $state.go('root.details', hotelId)
+        $scope.getQuestions()
 
-        vm.findHotels()
-        vm
+        $scope.saveAnswer = () =>
+            $scope.index += 1
+            @$log.info($scope.index)
+            @$log.info($scope.questions[$scope.index])
+            $scope.question = $scope.questions[$scope.index]
 
 
