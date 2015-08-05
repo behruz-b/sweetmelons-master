@@ -1,10 +1,7 @@
 .margin-top{
     margin-top: 12px;
 }
-.brand{
-    width: 85px;
-    heght: 70px;
-}
+
 .Img{
 
     width:440px;
@@ -18,4 +15,9 @@
 
     background-color: #cccccc;
 
+}
+
+.brand{
+    width: 75px;
+    heght: 60px;
 }
