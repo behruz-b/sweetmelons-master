@@ -8,7 +8,9 @@ angular.module('myApp.controllers')
             rans:''
         }
 
+        $scope.rAns = {}
         $scope.answer = {}
+        $scope.answers = []
 
         vm = @
 
@@ -17,25 +19,35 @@ angular.module('myApp.controllers')
                 if data
                     $scope.questions = data
                     $scope.question = $scope.questions[$scope.index]
+                    $scope.rAns = $scope.question.rAns
+
             ).$promise
 
         $scope.getQuestions()
 
         $scope.saveAnswer = () =>
             $scope.index += 1
-            @$log.info($scope.index)
-            @$log.info($scope.questions[$scope.index])
-            $scope.question = $scope.questions[$scope.index]
-            userId = {}
-            $localForage.getItem('userm').then (data) ->
-                userId = data.id
-                $log.info("store")
-                $log.info(userId)
-                $log.info("storage")
+            isRightAns = if $scope.rAns in [$scope.quest.rans] then true else false
+            user = {}
 
-            $scope.answer = {
-                questionId: $scope.question.id
-                remainingTime: 10000
-                userId: userId
-            }
+            $localForage.getItem('userm').then (data) ->
+                user = data
+                $scope.answer = {
+                    questionId: $scope.question.id
+                    remainingTime: 10000
+                    userId: user.id
+                    userName: user.firstName + " " + user.lastName
+                    rAns: isRightAns
+                    tAns: $scope.quest.rans
+                }
+
+                $log.info("++++++++++++++++")
+                $log.info($scope.answer)
+                $log.info("================")
+                $scope.quest = {
+                    rans:''
+                }
+
+            if ($scope.questions.length - 1 >= $scope.index)
+                $scope.question = $scope.questions[$scope.index]
 
