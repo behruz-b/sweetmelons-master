@@ -21,3 +21,55 @@
     width: 75px;
     heght: 60px;
 }
+.margin-top{
+    margin-top: 12px;
+}
+
+
+.Img{
+
+    width:440px;
+    height:260px;
+
+}
+.navText{
+    color:green;
+}
+.indColor{
+
+    background-color: #f8efc0;
+
+}
+.shrift{
+    font-family: Georgia;
+}
+.margin-left{
+    margin-left: -70px;
+}
+.badge-1{
+    background-color: gold;
+    font-family: Georgia;
+    font-size: larger;
+    color: #1F1F1F;
+}
+.badge-2{
+    background-color: #c0c0c0;
+    font-family: Georgia;
+    font-size: larger;
+    color: #1F1F1F;
+}
+.badge-3{
+    background-color: darkorange;
+    font-family: Georgia;
+    font-size: larger;
+    color: #1F1F1F;
+}
+.numeration-padding{
+    padding: 12%;
+}
+.margin-leftList{
+    margin-left: -30px;
+}
+.questionFont{
+    font-size: 25px;
+}
