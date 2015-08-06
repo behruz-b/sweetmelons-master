@@ -4,6 +4,7 @@ import com.typesafe.scalalogging.slf4j.LazyLogging
 import jp.t2v.lab.play2.auth.{OptionalAuthElement, LoginLogout}
 import models.UserRoleEnum._
 import models._
+import play.api.libs.json.Json._
 
 import play.api.mvc._
 import play.api.libs.json._
@@ -46,6 +47,7 @@ object Application extends Controller with LoginLogout with OptionalAuthElement 
 
         found.list.headOption match {
           case Some(user) =>
+            Ok(toJson(user))
             gotoLoginSucceeded(user.id.get)
           case _ =>
             Future.successful(BadRequest("Incorrect login or password"))

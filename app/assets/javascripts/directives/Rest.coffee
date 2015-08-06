@@ -6,6 +6,7 @@ angular.module('myApp')
                 'query': {method: 'GET', url: '/users/list', isArray: true}
                 'roles': {method: 'GET', url: '/users/roles', isArray: true},
                 'states': {method: 'GET', url: '/users/states', isArray: true},
+                'userObj': {method: 'POST', url: '/userObj'},
                 'signIn': {method: 'POST', url: '/signIn'}
                 'signUp': {method: 'POST', url: '/users/signup'}
             }

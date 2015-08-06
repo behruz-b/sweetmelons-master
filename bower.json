@@ -1,0 +1,7 @@
+{
+  "name": "sweetmelons",
+  "dependencies": {},
+  "devDependencies": {
+    "angular-localforage": "~1.2.3"
+  }
+}

@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 .controller 'SignInCtrl', class
-    constructor: ($scope, @$log, $state, Users) ->
+    constructor: ($scope, @$log, $state, $localForage, Users) ->
         vm = @
 
         vm.signIn = (credential) =>
@@ -14,15 +14,22 @@ angular.module('myApp.controllers')
                 login: login
                 password: pass
 
-            $log.info(loginPass)
+            @$log.info(loginPass)
 
             Users.signIn(loginPass, (data) =>
                 if data
-#                    questId = 0
-#                    @$log.info("questId")
-#                    @$log.info(questId)
-#                    @$log.info("questId1")
+                    @$log.info("data1")
+                    @$log.info(JSON.stringify(data))
+                    @$log.info(data)
+                    @$log.info("data2")
+                    $scope.saveUserInStorage(loginPass)
                     $state.go('root.start', questId:0)
                 else
                     alert("Incorrect login or password.")
+            ).$promise
+
+        $scope.saveUserInStorage = (loginPass) =>
+            Users.userObj(loginPass, (data) =>
+                if data
+                    $localForage.setItem('userm', data)
             ).$promise

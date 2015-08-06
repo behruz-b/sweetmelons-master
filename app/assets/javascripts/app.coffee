@@ -12,7 +12,8 @@ dependencies = [
     'angular-growl',
     'ngAnimate',
     'mgcrea.ngStrap',
-    'blueimp.fileupload'
+    'blueimp.fileupload',
+    'LocalForageModule'
 ]
 
 app = angular.module('myApp', dependencies)

@@ -10,6 +10,7 @@ POST        /signOut                  controllers.Application.signOut
 POST        /users/signup             @controllers.Users.signUp
 
 GET         /users                    @controllers.Users.usersList
+POST        /userObj                  @controllers.Users.getUser
 
 POST        /questions/add            @controllers.Questions.addQuestion
 GET         /questions/list           @controllers.Questions.questionsList
