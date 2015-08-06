@@ -1,28 +1,29 @@
 <div class="container">
+    <br/>
     <div class="row">
         <div class="col-md-7 col-md-offset-3">
-            <form id="PassTestForm" name="PassTestForm"  ng-controller="PassTestCtrl as vm"
-                  class="form-horizontal" role="form" >
-                <h4 class="text-center"><b>{{question.id}} - savol: </b> {{question.question}}</h4>
-                <label style="font-size: 14px">
-                    <input type="radio" ng-model="quest.rans" value="a">
-                    {{ question.aAns }}
-                </label><br />
-                <label>
+            <form id="PassTestForm" name="PassTestForm" ng-controller="PassTestCtrl as vm"
+                  class="form-horizontal" role="form">
+                <h2 class="text-center"><b>{{question.id}} - savol: </b> {{question.question}}</h2>
+                <label class="questionFont">
+                   <input type="radio" ng-model="quest.rans" value="a">
+                        {{ question.aAns }}
+                </label><br/>
+                <label class="questionFont">
                     <input type="radio" ng-model="quest.rans" value="b">
-                            {{ question.bAns }}
-                </label><br />
-                <label>
+                    {{ question.bAns }}
+                </label><br/>
+                <label class="questionFont">
                     <input type="radio" ng-model="quest.rans" value="c">
                     {{ question.cAns }}
-                </label><br />
-                <label>
+                </label><br/>
+                <label class="questionFont">
                     <input type="radio" ng-model="quest.rans" value="d">
                     {{ question.dAns }}
-                </label><br />
+                </label><br/><br/>
 
                 <div class="text-center">
-                    <button ng-click="saveAnswer()" class="btn btn-success">Keyingi</button>
+                    <button ng-click="saveAnswer()" class="btn btn-lg btn-warning">Keyingi savol</button>
                 </div>
                 <br/>
             </form>
