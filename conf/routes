@@ -3,20 +3,22 @@
 # ~~~~
 
 # Home page
-GET         /                         controllers.Application.index
+GET         /                      controllers.Application.index
 
-POST        /signIn                   controllers.Application.signIn
-POST        /signOut                  controllers.Application.signOut
-POST        /users/signup             @controllers.Users.signUp
+POST        /signIn                controllers.Application.signIn
+POST        /signOut               controllers.Application.signOut
+POST        /users/signup          @controllers.Users.signUp
 
-GET         /users                    @controllers.Users.usersList
-POST        /userObj                  @controllers.Users.getUser
+GET         /users                 @controllers.Users.usersList
+POST        /userObj               @controllers.Users.getUser
 
-POST        /questions/add            @controllers.Questions.addQuestion
-GET         /questions/list           @controllers.Questions.questionsList
+POST        /user/answer               @controllers.UserAnswers.addUserAnswer
+
+POST        /questions/add         @controllers.Questions.addQuestion
+GET         /questions/list        @controllers.Questions.questionsList
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file             controllers.Assets.at(path="/public", file)
+GET         /assets/*file          controllers.Assets.at(path="/public", file)
 
     

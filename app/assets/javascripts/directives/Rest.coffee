@@ -9,6 +9,7 @@ angular.module('myApp')
                 'userObj': {method: 'POST', url: '/userObj'},
                 'signIn': {method: 'POST', url: '/signIn'}
                 'signUp': {method: 'POST', url: '/users/signup'}
+                'answ': {method: 'POST', url: '/user/answer'}
             }
     )
 ])

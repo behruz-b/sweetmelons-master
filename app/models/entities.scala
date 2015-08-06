@@ -39,6 +39,35 @@ case class Permission (Test: PermTest,
                        User: PermUser) {
 }
 
+case class UserAnswer(id: Option[Int],
+                      userId: Int,
+                      userName: String,
+                      questionId: Int,
+                      isRight: Boolean,
+                      remaining: Int,
+                      tAns: String)
+
+
+class UserAnswersTable(tag: Tag) extends Table[UserAnswer](tag, "USER_ANSWER") {
+
+  def id = column[Int]("ID", O.PrimaryKey, O.AutoInc)
+
+  def userId = column[Int]("USER_ID", O.NotNull)
+
+  def userName = column[String]("USER_NAME", O.NotNull)
+
+  def questionId = column[Int]("QUESTION_ID", O.NotNull)
+
+  def isRight = column[Boolean]("PASSWORD", O.NotNull)
+
+  def remaining = column[Int]("REMAINING", O.NotNull)
+
+  def tAns = column[String]("T_ANS", O.NotNull)
+
+  def * = (id.?, userId, userName, questionId, isRight, remaining, tAns) <> (UserAnswer.tupled, UserAnswer.unapply _)
+
+}
+
 case class Admin(id: Option[Int],
                       firstName: String,
                       lastName: String,
@@ -105,4 +134,6 @@ object JsonFormats {
   implicit val userFormat = Json.format[Account]
 
   implicit val questionFormat = Json.format[Question]
+
+  implicit val userAnswerFormat = Json.format[UserAnswer]
 }

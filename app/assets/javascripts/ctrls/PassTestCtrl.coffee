@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 .controller 'PassTestCtrl', class
-    constructor: ($scope, @$log, $state, $stateParams, $localForage, Questions) ->
+    constructor: ($scope, @$log, $state, $stateParams, $localForage, Questions, Users) ->
         $scope.questions = {}
         $scope.question = {}
         $scope.index = (Number) $stateParams.questId
@@ -33,13 +33,18 @@ angular.module('myApp.controllers')
             $localForage.getItem('userm').then (data) ->
                 user = data
                 $scope.answer = {
-                    questionId: $scope.question.id
-                    remainingTime: 10000
                     userId: user.id
                     userName: user.firstName + " " + user.lastName
-                    rAns: isRightAns
+                    questionId: $scope.question.id
+                    isRight: isRightAns
+                    remaining: 10000
                     tAns: $scope.quest.rans
                 }
+
+                Users.answ($scope.answer, (data) =>
+                  if data
+                      $log.info(data)
+                ).$promise
 
                 $log.info("++++++++++++++++")
                 $log.info($scope.answer)
