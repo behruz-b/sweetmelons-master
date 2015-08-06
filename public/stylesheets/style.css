@@ -13,9 +13,10 @@
 }
 .indColor{
 
-    background-color: #cccccc;
+    background-color: navajowhite;
 
 }
+
 
 .brand{
     width: 75px;
@@ -24,7 +25,9 @@
 .margin-top{
     margin-top: 12px;
 }
-
+.mainMargin-top{
+    margin-top: -20px;
+}
 
 .Img{
 
