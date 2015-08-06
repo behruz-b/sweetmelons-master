@@ -18,6 +18,10 @@ angular.module('myApp.controllers')
             Questions.tests((data) =>
                 if data
                     $scope.questions = data
+                    @$log.info("aaaasss")
+                    @$log.info($scope.index)
+                    @$log.info($scope.index)
+                    @$log.info($scope.questions[$scope.index])
                     $scope.question = $scope.questions[$scope.index]
                     $scope.rAns = $scope.question.rAns
 
@@ -27,7 +31,7 @@ angular.module('myApp.controllers')
 
         $scope.saveAnswer = () =>
             $scope.index += 1
-            isRightAns = if $scope.rAns in [$scope.quest.rans] then true else false
+            isRightAns = if $scope.rAns in [$scope.quest.rans] then 1 else 0
             user = {}
 
             $localForage.getItem('userm').then (data) ->

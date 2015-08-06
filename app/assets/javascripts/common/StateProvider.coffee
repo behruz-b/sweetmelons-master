@@ -35,6 +35,16 @@ angular.module('myApp')
     data:
       pageTitle: 'Users'
   )
+  $stateProvider.state("root.results",
+    url: "/users/answers"
+    views:
+      'main@':
+        controller: "ResultCtrl"
+        controllerAs: "vm"
+        templateUrl: "assets/partials/results.html"
+    data:
+      pageTitle: 'Users'
+  )
   $stateProvider.state("root.signup",
     url: "/signup"
     views:

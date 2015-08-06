@@ -47,7 +47,6 @@ object Application extends Controller with LoginLogout with OptionalAuthElement 
 
         found.list.headOption match {
           case Some(user) =>
-            Ok(toJson(user))
             gotoLoginSucceeded(user.id.get)
           case _ =>
             Future.successful(BadRequest("Incorrect login or password"))

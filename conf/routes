@@ -12,7 +12,8 @@ POST        /users/signup          @controllers.Users.signUp
 GET         /users                 @controllers.Users.usersList
 POST        /userObj               @controllers.Users.getUser
 
-POST        /user/answer               @controllers.UserAnswers.addUserAnswer
+POST        /user/answer           @controllers.UserAnswers.addUserAnswer
+GET        /users/answers         @controllers.UserAnswers.getUserAnswers
 
 POST        /questions/add         @controllers.Questions.addQuestion
 GET         /questions/list        @controllers.Questions.questionsList

@@ -39,14 +39,21 @@ case class Permission (Test: PermTest,
                        User: PermUser) {
 }
 
+case class ResultUser(firstName: String,
+                      lastName: String,
+                      address: String,
+                      remaining: Int,
+                      currentScore: Int,
+                      testScore: Int,
+                      totalScore: Int)
+
 case class UserAnswer(id: Option[Int],
                       userId: Int,
                       userName: String,
                       questionId: Int,
-                      isRight: Boolean,
+                      isRight: Int,
                       remaining: Int,
                       tAns: String)
-
 
 class UserAnswersTable(tag: Tag) extends Table[UserAnswer](tag, "USER_ANSWER") {
 
@@ -58,7 +65,7 @@ class UserAnswersTable(tag: Tag) extends Table[UserAnswer](tag, "USER_ANSWER") {
 
   def questionId = column[Int]("QUESTION_ID", O.NotNull)
 
-  def isRight = column[Boolean]("PASSWORD", O.NotNull)
+  def isRight = column[Int]("IS_RIGHT", O.NotNull)
 
   def remaining = column[Int]("REMAINING", O.NotNull)
 
@@ -132,6 +139,7 @@ object JsonFormats {
   implicit val permissionWrites = Json.writes[Permission]
 
   implicit val userFormat = Json.format[Account]
+  implicit val resultFormat = Json.format[ResultUser]
 
   implicit val questionFormat = Json.format[Question]
 

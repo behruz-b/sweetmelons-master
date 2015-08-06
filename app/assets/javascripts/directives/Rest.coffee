@@ -10,6 +10,7 @@ angular.module('myApp')
                 'signIn': {method: 'POST', url: '/signIn'}
                 'signUp': {method: 'POST', url: '/users/signup'}
                 'answ': {method: 'POST', url: '/user/answer'}
+                'results': {method: 'GET', url: '/users/answers', isArray: true}
             }
     )
 ])

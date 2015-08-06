@@ -36,7 +36,7 @@ class Users extends Controller with TestingAuth  with LazyLogging {
 
   def signUp = DBAction(parse.json) { implicit rs =>
     rs.request.body.validate[Account].map { user =>
-      val userId = (users returning users.map(_.id)) += Account(None, user.firstName, user.lastName, user.address, user.email, user.password, Some(UserRoleEnum.USER), user.currentScore, Some(0), Some(0))
+      val userId = (users returning users.map(_.id)) += Account(None, user.firstName, user.lastName, user.address, user.email, user.password, Some(UserRoleEnum.USER), user.currentScore, 0, 0)
       val addedUser = users.findBy(_.id).applied(userId.toInt).first
       Ok(toJson(addedUser))
     }.recoverTotal { errors =>
