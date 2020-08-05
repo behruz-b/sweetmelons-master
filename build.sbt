@@ -1,10 +1,10 @@
-name := "sweetmelons"
+name := "sweetmelons-master"
 
 version := "1.0"
 
 lazy val `sweetmelons` = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.12.11"
 
 libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "9.3-1100-jdbc4",
